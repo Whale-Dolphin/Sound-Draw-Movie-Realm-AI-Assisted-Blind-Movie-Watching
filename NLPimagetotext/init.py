@@ -3,7 +3,7 @@ import openai
 import json
 
 # 配置OpenAI API密钥
-openai.api_key = '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'
+openai.api_key = ''
 
 # 读取CSV文件
 data = pd.read_csv('C:/Users/17280/.conda/slowfast/output/output.csv', encoding='unicode_escape', dtype={'label': str, 'name': str, 'action1': str, 'action2': str, 'action3': str})
