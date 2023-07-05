@@ -1,0 +1,1 @@
+VIDEO_PATH = 'input' # 要处理的文件路径

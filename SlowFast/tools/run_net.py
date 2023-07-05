@@ -11,8 +11,16 @@ from test_net import test
 from train_net import train
 from visualization import visualize
 
+# import os
+# import sys
+
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+# import config
 
 def main():
+    # input_video = config.VIDEO_PATH
+    # cmd = f'python tools/run_net.py --cfg demo/AVA/SLOWFAST_32x2_R101_50_50.yaml INPUT_VIDEO {input_video}'
+    
     """
     Main function to spawn the train and test process.
     """

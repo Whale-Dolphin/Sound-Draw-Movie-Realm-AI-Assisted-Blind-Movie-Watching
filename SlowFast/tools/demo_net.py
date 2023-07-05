@@ -102,6 +102,7 @@ def run_demo(cfg, frame_provider):
                 max_2 = 0
                 max_index_2 = 0
                 for j in range(len(data_action_preds[i])):
+                    
                     if data_action_preds[i][j] > max:
                         max_1 = max
                         max = data_action_preds[i][j]
@@ -116,7 +117,12 @@ def run_demo(cfg, frame_provider):
                         max_2 = data_action_preds[i][j]
                         max_index_2 = j
                 data_max = []
-                data_max = ([(max, max_index),(max_1, max_index_1),(max_2, max_index_2)])
+                if max_2 > 0.75:
+                    data_max = ([(max, max_index),(max_1, max_index_1),(max_2, max_index_2)])
+                elif max_1 > 0.75:
+                    data_max = ([(max, max_index),(max_1, max_index_1)])
+                else:
+                    data_max = ([(max, max_index)])
                 data_action_preds_max.append(data_max)
             for bboxes in task.bboxes:
                 data_bboxes.append(bboxes)
@@ -128,7 +134,7 @@ def run_demo(cfg, frame_provider):
                     'action_pred': data_action_preds_max[i],
                 })
             df = pd.DataFrame(data_list)
-            df.to_csv('E:\Hackday\output\output.csv', mode='a', header=False, index=False)
+            df.to_csv('C:/Users/17280/.conda/slowfast/output/output.csv', mode='a', header=False, index=False)
             data_list = []
 
         except IndexError:
@@ -147,6 +153,7 @@ def run_demo(cfg, frame_provider):
                 max_2 = 0
                 max_index_2 = 0
                 for j in range(len(data_action_preds[i])):
+                    
                     if data_action_preds[i][j] > max:
                         max_1 = max
                         max = data_action_preds[i][j]
@@ -161,7 +168,12 @@ def run_demo(cfg, frame_provider):
                         max_2 = data_action_preds[i][j]
                         max_index_2 = j
                 data_max = []
-                data_max = ([(max, max_index),(max_1, max_index_1),(max_2, max_index_2)])
+                if max_2 > 0.75:
+                    data_max = ([(max, max_index),(max_1, max_index_1),(max_2, max_index_2)])
+                elif max_1 > 0.75:
+                    data_max = ([(max, max_index),(max_1, max_index_1)])
+                else:
+                    data_max = ([(max, max_index)])
                 data_action_preds_max.append(data_max)
             for bboxes in task.bboxes:
                 data_bboxes.append(bboxes)
@@ -173,7 +185,7 @@ def run_demo(cfg, frame_provider):
                     'action_pred': data_action_preds_max[i],
                 })
             df = pd.DataFrame(data_list)
-            df.to_csv('E:\Hackday\output\output.csv', mode='a', header=False, index=False)
+            df.to_csv('C:/Users/17280/.conda/slowfast/output/output.csv', mode='a', header=False, index=False)
             data_list = []
             
             continue

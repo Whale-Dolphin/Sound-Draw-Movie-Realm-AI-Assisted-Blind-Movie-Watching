@@ -70,11 +70,12 @@ OUTPUT_DIR: .
 # TENSORBOARD:
 #   MODEL_VIS:
 #     TOPK: 2
+
 DEMO:
   ENABLE: True
   LABEL_FILE_PATH:  C:\Users\17280\.conda\slowfast\SlowFast\demo\AVA\ava.json  # Add local label file path here.
-  INPUT_VIDEO: E:\Hackday\input\1138309349-1-208.mp4
-  OUTPUT_FILE: E:\Hackday\output\demo_output.mp4
+  INPUT_VIDEO: C:\Users\17280\.conda\slowfast\intput\1.mp4 # intput\1.mp4
+  OUTPUT_FILE: C:\Users\17280\.conda\slowfast\output\demo_output.mp4
   # WEBCAM: 0
   DETECTRON2_CFG: "COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml"
   DETECTRON2_WEIGHTS: detectron2://COCO-Detection/faster_rcnn_R_50_FPN_3x/137849458/model_final_280758.pkl
