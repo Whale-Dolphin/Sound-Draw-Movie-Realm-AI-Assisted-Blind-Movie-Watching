@@ -28,6 +28,8 @@ nlp部分我们调用了openai的api来进行自然语言的转换，我们也�
     python setup.py build develop
 ```
 ### 项目配置
-项目配置相对简单，首先需要在一级目录中的confg.py中填写视频的路径和输出的路径，其次需要进入到/Slowfast/demo/AVA/SLOWFAST_32x2_R101_50_50.yaml中填写所需路径，为什么不能使用config.py我在该文件中已进行说明QAQ。然后需要在https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/ava/SLOWFAST_32x2_R101_50_50.pkl下载slowfast模型并放入/Slowfast/demo/model文件夹中，之后在下载https://huggingface.co/t5-base/resolve/main/pytorch_model.bin 下载t5-base的权重文件并放入ImageCaptioning\t5_base中。最后你需要将自己的openaiAPI填写到NLP\nlp.py 至此，所有的配置都已进行完成
+项目配置相对简单，首先需要在一级目录中的confg.py中填写视频的路径和输出的路径，其次需要进入到/Slowfast/demo/AVA/SLOWFAST_32x2_R101_50_50.yaml中填写所需路径，为什么不能使用config.py我在该文件中已进行说明QAQ。然后需要在https://dl.fbaipublicfiles.com/pyslowfast/model_zoo/ava/SLOWFAST_32x2_R101_50_50.pkl 下载slowfast模型并放入/Slowfast/demo/model文件夹中，之后在下载https://huggingface.co/t5-base/resolve/main/pytorch_model.bin 下载t5-base的权重文件并放入ImageCaptioning\t5_base中。最后你需要将自己的openaiAPI填写到NLP\nlp.py 至此，所有的配置都已进行完成
 ## 结语
 由于项目的队伍是四个大一学生并且有两个人很忙，加上技术不太熟练，技术力有限，所以本项目严格来说还是一个半成品，我非常希望能完成yolo、opencv、nlp、vits的部分使他成为一个更完善的项目，能够更好的帮助盲人群体会到新鲜的影视体验和更丰富的娱乐活动。感谢联创提供给我和我们这个平台和机会让我们能提出这个想法并完成了最初的工作。
+## 附件
+会上传演示视频作为附件（待上传）
