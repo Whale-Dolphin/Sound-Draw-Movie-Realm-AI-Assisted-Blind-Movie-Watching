@@ -19,6 +19,13 @@ import pandas as pd
 
 logger = logging.get_logger(__name__)
 
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+import config
+
+output = config.OUTPUT_PATH
 
 def run_demo(cfg, frame_provider):
     """
@@ -118,11 +125,11 @@ def run_demo(cfg, frame_provider):
                         max_index_2 = j
                 data_max = []
                 if max_2 > 0.75:
-                    data_max = ([(max, max_index),(max_1, max_index_1),(max_2, max_index_2)])
+                    data_max = [max_index, max_index_1, max_index_2]
                 elif max_1 > 0.75:
-                    data_max = ([(max, max_index),(max_1, max_index_1)])
+                    data_max = [max_index, max_index_1]
                 else:
-                    data_max = ([(max, max_index)])
+                    data_max = [max_index]
                 data_action_preds_max.append(data_max)
             for bboxes in task.bboxes:
                 data_bboxes.append(bboxes)
@@ -134,7 +141,7 @@ def run_demo(cfg, frame_provider):
                     'action_pred': data_action_preds_max[i],
                 })
             df = pd.DataFrame(data_list)
-            df.to_csv('C:/Users/17280/.conda/slowfast/output/output.csv', mode='a', header=False, index=False)
+            df.to_csv(output, mode='a', header=False, index=False)
             data_list = []
 
         except IndexError:
@@ -169,11 +176,11 @@ def run_demo(cfg, frame_provider):
                         max_index_2 = j
                 data_max = []
                 if max_2 > 0.75:
-                    data_max = ([(max, max_index),(max_1, max_index_1),(max_2, max_index_2)])
+                    data_max = {[{max, max_index}, max_index_1, max_index_2]}
                 elif max_1 > 0.75:
-                    data_max = ([(max, max_index),(max_1, max_index_1)])
+                    data_max = [max_index, max_index_1]
                 else:
-                    data_max = ([(max, max_index)])
+                    data_max = [max_index]
                 data_action_preds_max.append(data_max)
             for bboxes in task.bboxes:
                 data_bboxes.append(bboxes)
@@ -185,7 +192,7 @@ def run_demo(cfg, frame_provider):
                     'action_pred': data_action_preds_max[i],
                 })
             df = pd.DataFrame(data_list)
-            df.to_csv('C:/Users/17280/.conda/slowfast/output/output.csv', mode='a', header=False, index=False)
+            df.to_csv(output, mode='a', header=False, index=False)
             data_list = []
             
             continue

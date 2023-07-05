@@ -5,7 +5,17 @@ TRAIN:
   EVAL_PERIOD: 1
   CHECKPOINT_PERIOD: 1
   AUTO_RESUME: True
-  CHECKPOINT_FILE_PATH: C:\Users\17280\.conda\slowfast\SlowFast\demo\models\SLOWFAST_32x2_R101_50_50.pkl  #path to pretrain model
+  CHECKPOINT_FILE_PATH:   # 模型路径 需使用绝对路径相对路径会因为该配置被不同位置的不同文件调用而产生问题下面的路径同理
+  # 该段手输路径理论上可以通过在../../tools/run_net.py中添加代码实现自动获取
+  # 但由于某种神奇原因加上后slowfast模型会出现问题，使用者可自行尝试是否可行
+  # import os
+  # import sys
+
+  # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+  # import config
+
+  # input_video = config.VIDEO_PATH
+  # cmd = f'python tools/run_net.py --cfg demo/AVA/SLOWFAST_32x2_R101_50_50.yaml INPUT_VIDEO {input_video}'
   CHECKPOINT_TYPE: pytorch
 DATA:
   NUM_FRAMES: 32
@@ -73,9 +83,9 @@ OUTPUT_DIR: .
 
 DEMO:
   ENABLE: True
-  LABEL_FILE_PATH:  C:\Users\17280\.conda\slowfast\SlowFast\demo\AVA\ava.json  # Add local label file path here.
-  INPUT_VIDEO: C:\Users\17280\.conda\slowfast\intput\1.mp4 # intput\1.mp4
-  OUTPUT_FILE: C:\Users\17280\.conda\slowfast\output\demo_output.mp4
+  LABEL_FILE_PATH:   # 标签路径
+  INPUT_VIDEO: # 输入视频路径
+  OUTPUT_FILE: # 输出视频路径
   # WEBCAM: 0
   DETECTRON2_CFG: "COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml"
   DETECTRON2_WEIGHTS: detectron2://COCO-Detection/faster_rcnn_R_50_FPN_3x/137849458/model_final_280758.pkl

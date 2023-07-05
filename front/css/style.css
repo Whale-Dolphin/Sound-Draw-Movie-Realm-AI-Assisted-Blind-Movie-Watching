@@ -1,0 +1,103 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #eff0f4;
+}
+
+.logo-container {
+  position: absolute;
+  top: 0;
+  /* left: -50px; */
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background: url(../img/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
+.logo {
+  object-fit: contain;
+  max-width: 40%;
+  height: 40%; 
+}
+
+.dormnum{
+  margin-left: -120px;
+}
+
+.container{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+}
+
+.container .drop{
+  position: relative;
+  width: 600px;
+  height: 600px;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, .05),
+              25px 35px 20px rgba(0, 0, 0, .05),
+              25px 30px 30px rgba(0, 0, 0, .05),
+              inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+    transition: 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ border-radius: 52% 48% 33% 67% / 38% 45% 55% 62%;
+}
+
+.container .drop:hover{
+  border-radius: 50%;
+}
+
+.container .drop::before{
+  content: '';
+  position: absolute;
+  top:100px;
+  left: 135px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.85;
+}
+.container .drop::after{
+  content: '';
+  position: absolute;
+  top:155px;
+  left: 175px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.85;
+}
+
+.container .drop .content{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0px;
+  gap: 20px;
+}
